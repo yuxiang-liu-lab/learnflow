@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>LearnFlow Settings</title>
+  <link rel="stylesheet" href="options.css">
+  <script src="options.js" defer></script>
+</head>
+<body>
+  <main>
+    <h1>LearnFlow Settings</h1>
+    <p>Shared settings for Understand and Practice. Use your OpenAI API account to explain selected passages and analyze practice questions. Requests may incur API charges.</p>
+    <form id="settings">
+      <label for="key">OpenAI API key</label>
+      <input id="key" type="password" autocomplete="off" spellcheck="false" maxlength="1024" placeholder="sk-… (leave blank to keep saved key)">
+      <p id="key-status" class="hint">Checking saved key…</p>
+      <label for="model">Text model · Understand and Practice</label>
+      <input id="model" type="text" required maxlength="200" value="gpt-5.4-mini" spellcheck="false" autocomplete="off">
+      <p class="hint">Use a model supporting the Responses API and Structured Outputs.</p>
+      <label for="audio-model">Audio model</label>
+      <input id="audio-model" type="text" list="audio-models" required maxlength="200" value="gpt-audio" spellcheck="false" autocomplete="off">
+      <datalist id="audio-models"><option value="gpt-audio">Current default / A</option><option value="gpt-audio-1.5">Comparison / B</option></datalist>
+      <p class="hint">A/B comparison: choose gpt-audio or gpt-audio-1.5, save, then Analyze again on the same question. Both use the same listening prompt. The default remains gpt-audio until accuracy is compared.</p>
+      <p class="hint">An audio-input Chat Completions model is required. The question's MP3 bytes are sent for listening analysis. No text-only fallback is used.</p>
+      <button type="submit">Save settings</button>
+      <button id="remove" type="button">Remove saved key</button>
+      <p id="status" role="status" aria-live="polite"></p>
+    </form>
+    <p>The key is kept in local extension storage, never synced or returned to the quiz panel. Only the service worker uses it for API requests. The saved key is not displayed here again.</p>
+    <p>After saving, return to the normal quiz question and choose <strong>Analyze again</strong>.</p>
+    <p class="hint">Supports text questions and question-specific native MP3 audio inside question prompts. Other players remain blocked. The assistant never clicks, selects, saves, or submits an answer.</p>
+  </main>
+</body>
+</html>

@@ -1,0 +1,11 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>LearnFlow</title><link rel="stylesheet" href="panel.css"><script type="module" src="panel.js"></script></head>
+<body><header><h1>LearnFlow</h1><button id="settings">Settings</button></header><main>
+<h2>Understand</h2><p class="hint">Selections stay local until you choose Explain, Explain simply, Summarize, or Ask. That action sends the passage and conversation to OpenAI using your configured Text Model.</p>
+<button id="read">Get current selection</button><p class="hint">Select text, then use this button or the right-click LearnFlow menu. If access is unavailable, open the toolbar popup first.</p>
+<section id="pending" hidden><h3>New selection ready</h3><blockquote id="pending-text"></blockquote><p>Using this selection clears the current conversation and sends the new passage to OpenAI for the indicated action.</p><button id="replace">Use new selection</button> <button id="dismiss">Keep current context</button></section>
+<section><h3>Context</h3><p id="source-page" class="hint"></p><blockquote id="context">Select a passage to begin.</blockquote><div class="actions"><button data-action="explain" disabled>Explain</button><button data-action="simple" disabled>Explain simply</button><button data-action="summarize" disabled>Summarize</button></div></section>
+<p id="status" role="status" aria-live="polite"></p><p id="model" class="hint"></p><section id="conversation" aria-label="Learning conversation" aria-live="polite"></section>
+<form id="followup"><label for="question">Ask a follow-up</label><textarea id="question" maxlength="2000" rows="3" placeholder="Can you give me an example?"></textarea><button id="ask" disabled>Ask</button><p class="hint">Ctrl+Enter or ⌘+Enter to ask. Enter adds a new line.</p></form>
+<p class="hint">One temporary conversation per browser window, up to 10 exchanges. It survives panel reopening but clears on browser restart or extension reload. No learning history is saved.</p>
+<details><summary>Practice · LearnFlow</summary><p>The existing read-only Practice panel remains available in supported CengageNOW quiz frames. It never selects or submits answers.</p></details></main></body></html>

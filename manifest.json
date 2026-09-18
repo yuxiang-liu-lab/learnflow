@@ -1,0 +1,45 @@
+{
+  "manifest_version": 3,
+  "name": "LearnFlow",
+  "version": "0.6.1",
+  "description": "Explain selected text, ask contextual follow-ups, and analyze practice questions without selecting or submitting answers.",
+  "minimum_chrome_version": "116",
+  "permissions": [
+    "storage",
+    "activeTab",
+    "scripting",
+    "sidePanel",
+    "contextMenus"
+  ],
+  "host_permissions": [
+    "https://api.openai.com/*",
+    "https://cnow.apps.ng.cengage.com/*"
+  ],
+  "background": {
+    "service_worker": "background/service-worker.js",
+    "type": "module"
+  },
+  "action": {
+    "default_title": "LearnFlow · Understand and Practice",
+    "default_popup": "popup/popup.html"
+  },
+  "options_page": "options/options.html",
+  "content_scripts": [
+    {
+      "matches": [
+        "https://cnow.apps.ng.cengage.com/ilrn/takeAssignment/*"
+      ],
+      "js": [
+        "content/messaging.js",
+        "content/parser.js",
+        "content/drag.js",
+        "content/content.js"
+      ],
+      "all_frames": true,
+      "run_at": "document_idle"
+    }
+  ],
+  "side_panel": {
+    "default_path": "sidepanel/panel.html"
+  }
+}

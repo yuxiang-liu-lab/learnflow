@@ -1,0 +1,17 @@
+{
+  "description": "Invented metadata for relative native-audio source resolution; no recording or captured course data.",
+  "id": "synthetic-audio-item_question",
+  "question": "Which synthetic sound begins the sequence?",
+  "choices": [
+    "Tone A",
+    "Tone B",
+    "Tone C",
+    "Tone D"
+  ],
+  "srcAttribute": "/media/synthetic_clip_b.mp3",
+  "src": "https://media.example.test/media/synthetic_clip_b.mp3",
+  "currentSrc": "https://media.example.test/media/synthetic_clip_b.mp3",
+  "sources": [],
+  "duration": 12.5,
+  "readyState": 4
+}

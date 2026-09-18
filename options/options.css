@@ -1,0 +1,10 @@
+:root { color-scheme: light dark; font: 16px/1.6 system-ui, sans-serif; }
+body { margin: 0; padding: 48px 24px; }
+main { max-width: 640px; margin: auto; }
+h1 { font-size: 28px; }
+.badge { display: inline-block; border: 1px solid #789; border-radius: 8px; padding: 6px 12px; }
+label { display:block; font-weight:600; margin:18px 0 6px; }
+input { box-sizing:border-box; width:100%; padding:10px; border:1px solid #789; border-radius:6px; font:inherit; }
+button { font:inherit; padding:8px 12px; margin:8px 6px 8px 0; cursor:pointer; }
+.hint { font-size:13px; opacity:.8; }
+#status { min-height:2em; }

@@ -1,0 +1,61 @@
+# Local credentials and private exports
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+*.pfx
+credentials*.json
+secrets*.json
+storage-export*.json
+cookies*.json
+*.har
+
+# Dependencies, generated output, and test reports
+node_modules/
+coverage/
+.nyc_output/
+test-results/
+playwright-report/
+/dist/
+/build/
+*.log
+*.tmp
+*.temp
+*.bak
+*.orig
+*.swp
+*.swo
+*~
+*.zip
+*.crx
+
+# Local debugging and browser data; retain checked-in test fixtures
+/work/
+/tmp/
+/temp/
+/outputs/
+/artifacts/
+/captures/
+/screenshots/
+/browser-profile/
+/user-data-dir/
+*.mp3
+*.wav
+*.mp4
+*.webm
+
+# Editor, OS, and local agent metadata
+.vscode/
+.idea/
+.codex/
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# Private local evaluation results
+/benchmarks-local/
+*.sqlite
+*.db
+.agents/
